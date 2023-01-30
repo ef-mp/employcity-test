@@ -1,0 +1,11 @@
+.app__container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.app__main {
+    margin: 100px auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 200px;
+}

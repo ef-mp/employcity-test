@@ -1,14 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {App} from './components/App/App';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const root = document.getElementById("root")
+let renderMethod
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+if (root && root.innerHTML !== "") {
+  renderMethod = ReactDOM.hydrate
+} else {
+  renderMethod = ReactDOM.render
+}
+
+
+renderMethod(<App />, document.getElementById("root"))

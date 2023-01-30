@@ -1,0 +1,25 @@
+.product-price {
+    --highlight-color: #72da50;
+
+    display: inherit;
+    color: inherit;
+}
+
+.product-price--up-highlight {
+    --highlight-color: var(--accent-color);
+    animation: highLight 1s linear;
+}
+
+.product-price--down-highlight {
+    animation: highLight 1s ease-in-out;
+}
+
+@keyframes highLight {
+    from {
+        color: var(--highlight-color);
+    }
+
+    to {
+        color: inherit;
+    }
+}
